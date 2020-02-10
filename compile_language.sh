@@ -25,7 +25,7 @@ cp ./src/analyser-gt-desc.hfstol /mnt/data/$type/$lang
 cp ./src/analyser-gt-norm.hfstol /mnt/data/$type/$lang
 cp ./src/generator-gt-desc.hfstol /mnt/data/$type/$lang
 cp ./src/generator-gt-norm.hfstol /mnt/data/$type/$lang
-cp ./src/generator-dict-gt-norm.hfstol /mnt/data/$type/$lang
+cp ./src/generator-dict-gt-norm.hfst /mnt/data/$type/$lang/generator-dict-gt-norm.hfstol
 
 cp /mnt/data/nightly-fst-server/directory_listing_php/index.php /mnt/data/$type/$lang
 cp -r  /mnt/data/nightly-fst-server/directory_listing_php/resources /mnt/data/$type/$lang
