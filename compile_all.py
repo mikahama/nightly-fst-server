@@ -4,7 +4,9 @@ from subprocess import call
 from glob import glob
 
 langs = [x.split("/")[-2] for x in glob(script_path("trunk/langs/*/"))]
+protected_langs = ["ara", "swe", "eng"]
 print(langs)
+langs = list(set(langs) - set(protected_langs))
 
 def run_niko(lang):
 	call([script_path("compile_language.sh"), lang, "nightly"])
