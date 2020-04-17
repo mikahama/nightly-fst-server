@@ -33,3 +33,7 @@ copy_json ./metadata.json /mnt/data/$type/$lang/metadata.json
 
 cp /mnt/data/nightly-fst-server/directory_listing_php/index.php /mnt/data/$type/$lang
 cp -r  /mnt/data/nightly-fst-server/directory_listing_php/resources /mnt/data/$type/$lang
+
+cd /mnt/data/trunk/words/dicts/
+rm $lang.json
+build_dicts $lang /mnt/data/$type/$lang
