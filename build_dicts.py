@@ -13,7 +13,10 @@ import sys
 def convert_xml(path):
 	xml = open_read(path).read()
 	o = xmltodict.parse(xml)
-	return o["r"]["e"]
+	try:
+		return o["r"]["e"]
+	except:
+		return []
 
 def merge_xmls(path, r):
 	for f in glob.glob(path+ "src/*.xml"):
