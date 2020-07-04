@@ -6,17 +6,13 @@
 lang=$1
 type=$2
 
-export GTLANG_$lang=/mnt/data/trunk/langs/$lang
-source /mnt/data/.env
-cd /mnt/data/trunk/langs/$lang
-make clean
-./autogen.sh
-./configure --with-hfst --without-xfst --enable-reversed-intersect
-make
-make install
 
-# Should we remove everything?
-# rm -f /mnt/data/$type/$lang
+cd /mnt/data/giella-langs/lang-$lang
+git pull
+
+./autogen.sh
+./configure --with-hfst --without-xfst --enable-reversed-intersect --enable-fst-hyphenator
+make
 
 mkdir -p /mnt/data/$type
 mkdir -p /mnt/data/$type/$lang
@@ -25,7 +21,8 @@ cp ./src/analyser-gt-desc.hfstol /mnt/data/$type/$lang
 cp ./src/analyser-gt-norm.hfstol /mnt/data/$type/$lang
 cp ./src/generator-gt-desc.hfstol /mnt/data/$type/$lang
 cp ./src/generator-gt-norm.hfstol /mnt/data/$type/$lang
-cp ./src/syntax/disambiguator.bin /mnt/data/$type/$lang
+cp ./src/cg3/disambiguator.bin /mnt/data/$type/$lang
+cp ./src/cg3/dependency.bin /mnt/data/$type/$lang
 cp ./src/generator-dict-gt-norm.hfst /mnt/data/$type/$lang/generator-dict-gt-norm.hfstol
 cp ./AUTHORS /mnt/data/$type/$lang/AUTHORS.txt
 cp ./LICENCE /mnt/data/$type/$lang/LICENCE.txt
