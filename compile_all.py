@@ -3,7 +3,12 @@ from mikatools import *
 from subprocess import call
 from glob import glob
 
-langs = [x.split("/")[-2] for x in glob(script_path("trunk/langs/*/"))]
+langs_n = [x.split("/")[-2] for x in glob(script_path("/mnt/data/giella-langs/*/"))]
+langs = []
+for l in langs_n:
+	if "lang-" not in l:
+		continue
+	langs.append(l.split("-")[1])
 protected_langs = ["ara", "swe", "eng"]
 print(langs)
 langs = list(set(langs) - set(protected_langs))

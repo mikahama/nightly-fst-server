@@ -23,6 +23,7 @@ cp ./src/generator-gt-desc.hfstol /mnt/data/$type/$lang
 cp ./src/generator-gt-norm.hfstol /mnt/data/$type/$lang
 cp ./src/cg3/disambiguator.bin /mnt/data/$type/$lang
 cp ./src/cg3/dependency.bin /mnt/data/$type/$lang
+cp ./src/hyphenation/hyphenation.lookup.hfst /mnt/data/$type/$lang
 cp ./src/generator-dict-gt-norm.hfst /mnt/data/$type/$lang/generator-dict-gt-norm.hfstol
 cp ./AUTHORS /mnt/data/$type/$lang/AUTHORS.txt
 cp ./LICENCE /mnt/data/$type/$lang/LICENCE.txt
@@ -32,5 +33,5 @@ cp /mnt/data/nightly-fst-server/directory_listing_php/index.php /mnt/data/$type/
 cp -r  /mnt/data/nightly-fst-server/directory_listing_php/resources /mnt/data/$type/$lang
 
 cd /mnt/data/trunk/words/dicts/
-rm $lang.json
+rm -f $lang.json
 build_dicts $lang /mnt/data/$type/$lang
