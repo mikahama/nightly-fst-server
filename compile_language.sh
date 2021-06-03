@@ -12,6 +12,7 @@ git pull
 
 ./autogen.sh
 ./configure --with-hfst --without-xfst --enable-reversed-intersect --enable-fst-hyphenator
+make clean
 make
 
 mkdir -p /mnt/data/$type
